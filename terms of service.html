@@ -102,7 +102,7 @@
     <div class="box">
         <strong>Effective Date:</strong> June 28, 2026
         <br>
-        <strong>Last Updated:</strong> September 23, 2026
+        <strong>Last Updated:</strong> November 15, 2026
         <br>
         <strong>Service:</strong> SRE Bot
         <br>
@@ -138,6 +138,7 @@
         <li>Staff and company-owner activity tracking</li>
         <li>Administrative logging</li>
         <li>Voice-channel and soundboard moderation</li>
+        <li>Automated moderation of messages sent to a designated honeypot channel</li>
         <li>Authorized administrative commands</li>
     </ul>
 
@@ -269,7 +270,24 @@
         and do not generally restrict ordinary text-channel communication.
     </p>
 
-    <h2>9. Automated Processing and Notifications</h2>
+    <h2>9. Honeypot Channel Moderation</h2>
+
+    <p>
+        A message sent to the designated honeypot channel by a member without
+        the configured exempt role may trigger an automated softban. The bot
+        temporarily bans the member and attempts to unban them immediately
+        afterward.
+    </p>
+
+    <p>
+        As part of this action, the bot asks Discord to permanently delete
+        messages authored by that member during the preceding seven days across
+        the server, not only in the honeypot channel. This may remove messages
+        from other channels. The bot's local counter records completed
+        softbans; the count does not identify individual members.
+    </p>
+
+    <h2>10. Automated Processing and Notifications</h2>
 
     <p>
         The SRE Bot performs automated processing for verification, application
@@ -288,7 +306,7 @@
         slash commands, and during scheduled activity checks.
     </p>
 
-    <h2>10. Records and Logging</h2>
+    <h2>11. Records and Logging</h2>
 
     <p>
         The SRE Bot may create operational records and logs in Discord and
@@ -306,7 +324,7 @@
         records.
     </p>
 
-    <h2>11. Third-Party Services</h2>
+    <h2>12. Third-Party Services</h2>
 
     <p>
         The SRE Bot relies on third-party services to perform certain functions,
@@ -323,7 +341,7 @@
         availability of these third-party services.
     </p>
 
-    <h2>12. Service Availability</h2>
+    <h2>13. Service Availability</h2>
 
     <p>
         Skyroute Entertainment does not guarantee that the SRE Bot will always
@@ -336,7 +354,7 @@
         hosting issues, configuration changes, or other circumstances.
     </p>
 
-    <h2>13. Prohibited Use</h2>
+    <h2>14. Prohibited Use</h2>
 
     <p>
         Users must not intentionally misuse the SRE Bot or attempt to interfere
@@ -352,7 +370,7 @@
         <li>Do not intentionally abuse voice or soundboard moderation systems.</li>
     </ul>
 
-    <h2>14. Changes to the Service</h2>
+    <h2>15. Changes to the Service</h2>
 
     <p>
         Skyroute Entertainment may modify, update, add, remove, or discontinue
@@ -365,7 +383,7 @@
         time.
     </p>
 
-    <h2>15. Changes to These Terms</h2>
+    <h2>16. Changes to These Terms</h2>
 
     <p>
         Skyroute Entertainment may update these Terms when the SRE Bot,
@@ -377,14 +395,14 @@
         the current version of these Terms.
     </p>
 
-    <h2>16. Privacy</h2>
+    <h2>17. Privacy</h2>
 
     <p>
         Information processed through the SRE Bot is described in the
         <a href="privacy.html">Skyroute Entertainment Privacy Policy</a>.
     </p>
 
-    <h2>17. Contact</h2>
+    <h2>18. Contact</h2>
 
     <p>
         For questions regarding these Terms or the operation of the SRE Bot,

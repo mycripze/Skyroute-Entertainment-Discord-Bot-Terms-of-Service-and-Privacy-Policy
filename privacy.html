@@ -102,7 +102,7 @@
     <div class="box">
         <strong>Effective Date:</strong> June 28, 2026
         <br>
-        <strong>Last Updated:</strong> September 23, 2026
+        <strong>Last Updated:</strong> November 15, 2026
         <br>
         <strong>Service:</strong> SRE Bot
         <br>
@@ -137,7 +137,7 @@
         <li>Discord user IDs</li>
         <li>Discord usernames and display names</li>
         <li>Discord server, channel, role, and message information</li>
-        <li>Message content in configured verification channels</li>
+        <li>Message content in configured verification channels; honeypot message events, sender IDs, and role membership</li>
         <li>Reactions and interaction information</li>
         <li>Voice-channel state information</li>
         <li>Application and verification messages</li>
@@ -209,6 +209,7 @@
         <li>Sending verification and activity notifications</li>
         <li>Maintaining administrative and audit logs</li>
         <li>Moderating voice-channel and soundboard activity</li>
+        <li>Moderating messages sent to the designated honeypot channel</li>
         <li>Responding to authorized administrative commands</li>
     </ul>
 
@@ -275,7 +276,21 @@
     <p>
         The bot does not delete application, audit, log, or notification messages
         as part of its normal operation, although it may remove or clear
-        interactive buttons from certain direct messages.
+        interactive buttons from certain direct messages. Honeypot moderation is
+        an exception: when a non-exempt member sends a message to the designated
+        honeypot channel, the bot uses a ban/unban sequence and asks Discord to
+        delete messages authored by that member during the preceding seven days
+        across the server, not only in the honeypot channel. This deletion is
+        permanent.
+    </p>
+
+    <p>
+        The bot checks the sender's Discord ID and role membership to apply the
+        configured exemption. It does not retain honeypot message content or a
+        persistent list of honeypot senders. Its local state stores the
+        configured channel ID, notice message ID, and an aggregate count of
+        completed softbans. If moderation fails, an operational console error
+        may include the sender's Discord ID and error details.
     </p>
 
     <p>
@@ -376,6 +391,14 @@
     </p>
 
     <p>
+        For honeypot moderation, Discord is asked to delete the member's
+        messages from the preceding seven days across the server. The bot's
+        local honeypot state retains the configured channel ID, notice message
+        ID, and aggregate count, not message content or a persistent list of
+        senders.
+    </p>
+
+    <p>
         The exact retention periods of Discord, Roblox, Google, hosting providers,
         or other external services are not determined by the SRE Bot's code.
     </p>
@@ -420,7 +443,7 @@
 
     <p>
         Use of the SRE Bot is also subject to the
-        <a href="terms.html">Skyroute Entertainment Terms of Service</a>.
+        <a href="terms%20of%20service.html">Skyroute Entertainment Terms of Service</a>.
     </p>
 
     <footer>
