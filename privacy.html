@@ -102,7 +102,7 @@
     <div class="box">
         <strong>Effective Date:</strong> June 28, 2026
         <br>
-        <strong>Last Updated:</strong> November 15, 2026
+        <strong>Last Updated:</strong> November 20, 2026
         <br>
         <strong>Service:</strong> SRE Bot
         <br>
@@ -190,6 +190,16 @@
         <li>Member activity and status information</li>
     </ul>
 
+    <p>
+        Additional company applications may also include the applicant's stated
+        main company, the additional company requested, the requested position,
+        and a mention of the target company's owner. When approved, the bot may
+        add an application timestamp and a link to the original Discord
+        application message to the target company's Google Sheet. Age and
+        inviter details may be copied from an existing company application
+        record.
+    </p>
+
     <h2>3. How Information Is Used</h2>
 
     <p>
@@ -201,6 +211,7 @@
         <li>Verifying Roblox accounts</li>
         <li>Checking Roblox account eligibility</li>
         <li>Processing company applications</li>
+        <li>Recording additional company applications and owner decisions</li>
         <li>Recording Step 3 verification information</li>
         <li>Assigning or updating Discord roles</li>
         <li>Synchronizing Discord nicknames with Roblox usernames</li>
@@ -236,8 +247,10 @@
     <h2>5. Google Sheets</h2>
 
     <p>
-        Step 3 verification records are stored in Google Sheets through the
-        Google Sheets API.
+        Step 3 verification and approved additional company application records
+        are stored in Google Sheets through the Google Sheets API. An
+        additional-company record is written to the target company's configured
+        sheet.
     </p>
 
     <p>
@@ -256,6 +269,9 @@
         <li>Inviter Discord ID</li>
         <li>Last activity or DM-ping timestamp</li>
         <li>Activity deadline information</li>
+        <li>Main company and additional company requested</li>
+        <li>Requested position and application message URL</li>
+        <li>Application approval timestamp</li>
     </ul>
 
     <p>
